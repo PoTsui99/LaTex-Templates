@@ -1,0 +1,9 @@
+*.aux
+*.DS_Store
+*.log
+*.toc
+*.aux
+*.nav
+*.out
+*.synctex(busy)
+*.synctex

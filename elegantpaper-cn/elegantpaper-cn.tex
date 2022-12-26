@@ -1,0 +1,50 @@
+%!TEX program = xelatex
+% 完整编译: xelatex -> bibtex -> xelatex -> xelatex
+\documentclass[lang=cn,11pt,a4paper,cite=authoryear]{elegantpaper}
+
+\title{四大流数据处理框架}
+\author{崔\quad{}博\\55180520}
+\date{\zhtoday}
+
+\usepackage{array}
+\newcommand{\ccr}[1]{\makecell{{\color{#1}\rule{1cm}{1cm}}}}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+流式数据显然是一种非常普遍的数据场景,这也是很多相关框架崛起的原因.流处理的关键优势在于相比于批处理它能够更快地提供见解(insights).本作业报告介绍了四种当前主流的流数据处理框架:Spark,S4(yahoo),Flink,Storm,并对其中的Flink进行着重探讨.
+\keywords{流数据处理\quad{}大数据\quad{}Apache Flink}
+\end{abstract}
+\section{Spark}
+Apache Spark 是专为大规模数据处理而设计的快速通用的计算引擎.Spark 由加州大学伯克利分校AMP实验室 (Algorithms, Machines, and People Lab) 开发,可用来构建大型的、低延迟的数据分析应用程序.
+
+
+Spark是在Scala语言中实现的,它将 Scala 用作其应用程序框架.与Hadoop不同,Spark和Scala能够紧密集成,其中的 Scala 可以像操作本地集合对象一样轻松地操作分布式数据集.
+
+Spark作为平台也开发了streaming处理框架spark streaming, SQL处理框架Dataframe,机器学习库MLlib,和图处理库 GraphX.实际上它是对 Hadoop 的补充,可以在 Hadoop 文件系统中并行运行.通过名为 Mesos 的第三方集群框架可以支持此行为.
+
+\section{S4}
+S4是Yahoo支持开发的一款分布式的,可扩展的,可插拔的,对称的大数据流式计算系统,编程语言采用Java.
+
+\section{Flink}
+Flink是一个分布式流处理器,提供直观且易于使用的API,以供实现有状态的流处理应用.
+
+它能够以fault-tolerant的方式高效地运行在大规模系统中.流处理技术在当今地位愈发重要,因为它为很多业务场景提供了非常优秀的解决方案,例如数据分析,ETL,事务应用等.在很多场景下,数据都是以持续不断的流事件创建.例如网站的交互、或手机传输的信息、服务器日志、传感器信息等.有状态的流处理（stateful stream processing）是一种应用设计模式,用于处理无边界的流事件.下面我们简单介绍一下有状态流处理的机制.对于任何处理流事件的应用来说,并不会仅仅简单的一次处理一个记录就完事了.在对数据进行处理或转换时,操作应该是有状态的.也就是说,需要有能力做到对处理记录过程中生成的中间数据进行存储及访问.当一个application 收到一个 event,在对其做处理时,它可以从状态信息（state）中读取数据进行协助处理.或是将数据写入state.在这种准则下,状态信息（state）可以被存储（及访问）在很多不同的地方,例如程序变量,本地文件,或是内置的（或外部的）数据库中.
+
+Apache Flink 存储应用状态信息在本地内存或是一个外部数据库中.因为Flink 是一个分布式系统,本地状态信息需要被有效的保护,以防止在应用或是硬件挂掉之后,造成数据丢失.Flink对此采取的机制是:定期为应用状态（application state）生成一个一致（consistent）的checkpoint,并写入到一个远端持久性的存储中.
+\section{Storm}
+Storm最早是由Twitter（推特）在GitHub上开源出来的.其最大的特点是处理数据非常快速,达到秒级百万元数组的处理效率.
+
+Storm主要分为两种组件Nimbus和Supervisor.这两种组件都是快速失败的,没有状态.任务状态和心跳信息等都保存在Zookeeper上的,提交的代码资源都在本地机器的硬盘上.
+
+\begin{itemize}
+	\item Nimbus负责在集群里面发送代码,分配工作给机器,并且监控状态.全局只有一个.
+	\item Supervisor会监听分配给它那台机器的工作,根据需要启动/关闭工作进程Worker.每一个要运行Storm的机器上都要部署一个,并且,按照机器的配置设定上面分配的槽位数.
+	\item Zookeeper是Storm重点依赖的外部资源.Nimbus和Supervisor甚至实际运行的Worker都是把心跳保存在Zookeeper上的.Nimbus也是根据Zookeerper上的心跳和任务运行状况,进行调度和任务分配的.
+	\item Storm提交运行的程序称为Topology.
+	\item Topology处理的最小的消息单位是一个Tuple,也就是一个任意对象的数组.
+	\item Topology由Spout和Bolt构成.Spout是发出Tuple的结点.Bolt可以随意订阅某个Spout或者Bolt发出的Tuple.Spout和Bolt都统称为component.
+\end{itemize}
+\end{document}

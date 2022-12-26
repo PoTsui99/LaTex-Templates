@@ -1,0 +1,15 @@
+\sectionTitle{科研实践}{\faLaptop}
+	\par{\quad{}}
+	\begin{keywords}
+		\keywordsentry{鸟鸣识别与图像匹配}{\begin{itemize}
+				\item 课题目的是对标记好类别的鸟鸣进行学习,进而对\textbf{连续音频}中出现的鸟鸣进行分辨,并且与其图像进行匹配.本人承担了数据集寻找,\textbf{模型训练},\textbf{模型预测}等任务.我首先将训练集中音频转换为梅尔对数频谱图,然后将其输入到\textbf{PyTorch}中预训练好的\textbf{ResNeXt}模型,并采用Adam优化器进行训练.通过多模型投票集成,使得最终预测达到让人满意的程度.
+			\end{itemize}
+			}
+		\keywordsentry{随机森林算法优化}{课题目的是对传统的\textbf{随机森林特征选择算法}(Feature Selection Using Forest Optimization Algorithm)进行优化.本人承担了\textbf{算法优化}的任务.我主要进行了以下优化举措:将大部分(60\%左右)树的初始化特征数量控制在较小范围;规定新树的fitness value不可低于原树;规定将全局播种范围拓展到全部年龄为0的树木中.相比原算法,新的特征选择算法使得在wine,lonosphere,heart等数据集上的预测准确度提高了1.5\%~5.1\%.}
+		\keywordsentry{瓦斯突出模式的模糊识别}{课题目的是复现一篇模糊数学领域关于瓦斯突出模式识别的论文.通过计算样本间的\textbf{汪培庄贴进度}得到样本相似度矩阵,再寻找多个合适的阈值去"截"相似度矩阵,以得到样本的不同风险等级,进而若给出一个样本对应特征便能大致估计其瓦斯突出风险.}
+		\keywordsentry{前后端分离博客}{项目运用\textbf{Django}+\textbf{Vue.js}的前后端架构,实现了简易个人博客的搭建.本人承担了后端接口的编写工作.通过采用RESTframwork及JWT令牌,实现了URI定位资源,前后端JSON数据交换,会话状态由客户端维护等时下流行的风格.}
+%		\keywordsentry{网课后台数据挖掘}{主要运用\textbf{sklearn}的DBSCAN,实现通过后台数据对最终成绩的估算.}
+		
+%		\keywordsentry{贪吃蛇}{运用\textbf{A*}与hand-crafted的启发算法实现的贪吃蛇\textbf{C++}程序.}
+	\end{keywords}
+\\

@@ -1,0 +1,126 @@
+\documentclass[a4paper]{ctexart}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\begin{document}
+	ctexh宏包是对CJK和xeCJK的进一步封装，包含了ctexart、ctexrep、ctexbook三大标准文档类.
+	\TeX \ users  %\TeX后面要有空格需要转义或者加{}
+	%Tab和空格只视为一个.
+	%开始时本行的注释，其末尾的所有回车不在文本中产生空格.
+	两个或者以上的回车视为换行，或者使用\par{}来进行换行.
+	反斜杠的表示方法：\textbackslash
+	\LaTeX {}中英文标点的表达`blah' ``blah''
+	各种横线：- {} -- {} ---\par
+	西欧中的重音：na\"ive cli\'che\\
+	\par{}不同符号\P{} \S{}\par
+	\copyright{} \texttrademark{}\par
+	\underline{hello} %生成赏心悦目统一高度的下划线
+	\par{}\emph{斜体字}\par{}\par
+	
+	
+	行内数学公式： $a^2 + b^2 = c^2$\par
+	行间数学公式：
+	\begin{equation}
+	a^2 + b^2 = c^2 \label{pythagorean}
+	\end{equation}
+	\begin{equation}
+	1 + 1 = 3 \tag{666} %手动修改公式编号
+	\end{equation}
+	\begin{equation}
+	1 + 1 = 4 \notag %取消公式编号
+	\end{equation}\par
+	\begin{equation*}
+	%无编号的数学公式环境
+	\end{equation*}\par
+	$\lim_{n\to\infty}
+	\sum_{k=1}^{n^2} \frac{1}{k^2}
+	= \frac{\pi^2}{6}$.\par
+	$\frac{\partial{x}}{\partial{y}}$
+	\par\par\par
+	Here I am gonna deal with my homework of database
+	\begin{equation*}
+	\Pi_{person\_name}(\sigma_{city="Miami"}(employee))
+	\end{equation*}
+	\begin{equation*}
+	\Pi_{person\_name}(\sigma_{salary>100,000}(works))
+	\end{equation*}
+	\begin{equation*}
+	\Pi_{person\_name}(\sigma_{city="Miami"\land{}salary>100,000}(employee\Join_{}works))
+	\end{equation*}
+	\begin{equation*}
+	\Pi_{course\_id,ID}(\sigma_{dept\_name=Comp.Sci.}(takes))
+	\end{equation*}\par
+	$\Pi_{salary}(instructor)-\Pi_{instructor.salary}(\sigma_{instructor.salary<i.salary}(instructor\times\rho_{i}(instructor)))$% the 8th question
+	\par
+	$\Pi_{ID,course\_id}(\sigma_{dept\_name=Comp.Sci.}(student))\div{}\Pi_{course\_id}(\sigma_{dept\_name=Comp.Sci.}(course))$% the 9th
+	\par
+	$\Pi_{ID,titile}((instructor\Join{}teaches)\Join{}course)\div{}\Pi_{title}(\sigma_{title="D.B.S."\land{}title="O.S."}(course))$% the 10th
+	\par
+	$\Pi_{customer\_name,can\_spend}(g_{(limit-credit\_balance)\ {}as\ {}can\_spend}(credit\_info))$%the 11th
+	\par
+	$instructor\gets{}instructor-\sigma_{dept\_name="Physics"}(instructor)$% the 15th
+	\par
+	$instructor\gets{}\sigma_{salary<4,0000\lor{}salary>60,000}(instructor)$% the 16th
+	\par
+	$\Pi_{title}(\sigma_{depr\_name="Comp.Sci."\land{}credits=3}(course))$% the 17th
+	\par
+	$\Pi_{ID}(students)-(\Pi_{ID}(students)-\Pi_{takes.ID}(\sigma_{name="Einstein"}(\Pi_{ID,t.ID}((takes\Join{}\rho_{teaches}(t)))\Join{}instructor)))$% the 19th 
+	\par
+	$\Pi_{sec\_id,count(ID)}(sec\_idg_{count(ID)\land{}(year=2009\land{}semester="Autumn")}(takes))$% the 20th
+	\par
+	$r\gets{}\Pi_{sec\_id,count(ID)}(sec\_idg_{count(ID)\land{}(year=2009\land{}semester="Autumn")}(takes))$
+	\par
+	$\Pi_{ENROLLMENT}\rho_{q(SEC\_NAME,ENROLLMENT)}((\sigma_{r.count(ID)<s.count(ID)}(r\times{}\rho_{s}(r))))$\par
+	假设第i天做实验的次数为$b_{i}$,第1至第i天做的实验次数之和为$a_{i}$,即$a_{i}=b_{1}+b_{2}+\dots{}+b_{i}$.\par
+	由题意,$数列\{a_{n}\}(1\leq{}n\leq{}50)$各项值域为$[50,75]$.\par
+	令$c_{i}=a_{i}+24$,构造数列${c_{n}}$,其各项的值域为$[75,99]$.\par
+	而$a_{1},a_{2},\dots,{}a_{50},c_{1},c_{2},\dots{},c_{50}$共有100项,由定理2.1.1
+	可得:$\exists{}k,j\subseteq{}[1,50]$且$k<j$,使得$a_{k}=c_{j}$.\par
+	$\therefore{}\sum_{n=k}^j{}b_n=24$,命题证毕.\par
+	要使两个点所连线段中点坐标也是整数,只需要两个点的横坐标之和为偶数且纵坐标之和也为偶数.\par
+	而一个点的坐标的情况根据横纵坐标奇偶总共可以分为四种情况(o,e),(o,o),(e,e),(e,o)(用o表示奇数,e表示偶数,以下同).\par
+	由定理2.1.1,五个点中必有至少两点符合以上四种情况中的同一情况.\par
+	若有至少两点符合(o,e),可知其连线中点坐标也为整数.\par
+	其余情况同理.命题证毕.\par
+	6的一个完全剩余系为$\{0,1,2,3,4,5\}$,由定理2.1.1,必存在a,b,使$(a-b)\mid{}6$.同理,在剩余的5个数字中也必存在c,d,使$(c-d)\mid{}4$.\par
+	$\therefore{}\exists{}a,b,c,d,使(a-b)(c-d)\mid{}24$.\par
+	$19\times{}4+1=77$\par
+	$a_{n}=n!$\par
+	$a_{n}=8-\frac{1}{2^n}$\par
+	$a_{n}=3a_{n-1}+3^n-3^0$\par
+	$3^1a_{n-1}=3^2a_{n-2}+3^n-3^1$\par
+	$\qquad\qquad\vdots$\par
+	$3^{n-1}a_{1}=3^na_{0}+3^n-3^{n-1}$\par
+	将上式累加可得:$a_{n}=(n-\frac{1}{2})3^n+\frac{1}{2}$.\par
+	$O(2^n)$\par
+	(1)由题意:$T(n)=4+T(n-3),(n\geq4)$.\par
+	$\qquad{}T(2)=4,T(1)=2$.\par
+	$\qquad{}\therefore{}T(n)=2n$.\par
+	(2)直觉上,要使时间最短,应该尽可能使烤架被充分使用.\par
+	比如在n=3时,按照以上算法,在汉堡只剩1个时,烤架未被完全占用,用时4min.而事实上是可以让烤架被完全占用的,用时为3min.因而该算法并不最优.\par
+	(3)一个最优算法为:\par
+	$\quad{}n\geq{}5$时,两个汉堡同时烤并翻面，然后对余下的n-2个汉堡递归应用同样的过程\par
+	$\quad{}n\leq{}3$时,若n=2则两个汉堡同时烤并翻面,若n=3,则先取1号和2号汉堡同时烤正面;然后将1号汉堡翻面,并取3号汉堡烤正面;最后将3号汉堡翻面,并取2号汉堡烤反面.
+	$n_{未点开位置}+n_{已经确认是雷的位置}=n_{中心位置的数字}$\par
+	$\sigma_{dept\_name=Comp.Sci.}(student\Join{}takes)$\par
+	$\Pi_{ID}(takes\div{}\Pi_{course\_id}(\sigma_{dept\_name="Comp.Sci."}(course)))$\par
+	先考虑安排总坐在前排和后排的同学,总共$A_{8}^5\times{}A_{8}^4$种坐法,剩下7位同学随意安排在剩余位置.\par
+	$\therefore$共有$A_{8}^5\times{}A_{8}^4\times{}A_{7}^6$种坐法.\par
+	从线排列考虑.所有线排列共有$15!$种.\par
+	而A与B相邻对应的线排列共$(2\times{}14!-2\times{}13!)$种,A与C相邻对应的线排列数也与之相同.\par
+	A与B、C同时相邻的线排列共$2\times{}(13!+4\times{}12!)$种.\par
+	综上,排座方法总共有$\frac{15!-2\times{}(2\times{}14!-2\times{}13!)+13!+4\times{}12!}{15}$种.\par
+	$M-\{a\}$有$\frac{11!}{2!\times{}4!\times{}5!}$种11-排列数.\par	
+	$M-\{b\}$有$\frac{11!}{3!\times{}3!\times{}5!}$种11-排列数.\par	
+	$M-\{b\}$有$\frac{11!}{3!\times{}4!\times{}4!}$种11-排列数.\par	
+	$\therefore{}$多重集M的11-排列数为:$\frac{11!}{2!\times{}4!\times{}5!}+\frac{11!}{3!\times{}3!\times{}5!}+\frac{11!}{3!\times{}4!\times{}4!}$.\par
+	$\binom{17}{10}-\binom{17}{12}$\par
+	$\frac{4}{9}$\par
+	$cost_{\mbox{吃加速}}-cost_{\mbox{吃最近的食物}} < valve1$,则吃加速\par
+	$cost_{\mbox{吃斜走}}-cost_{\mbox{吃最近的食物}} < valve2$,则吃斜走\par
+	$cost_{\mbox{吃第二个斜走}}-cost_{\mbox{吃最近的食物}} < valve3$,则吃第二个斜走\par
+	$cost_{\mbox{我吃该食物}}-cost_{\mbox{对方吃该食物}} > valve4$,则我放弃该食物,转而寻找下个食物\par
+	$b^{depth}$\par
+	$\sum_{k=1}^{n}k^2$
+	$B(n,k)$
+\end{document}

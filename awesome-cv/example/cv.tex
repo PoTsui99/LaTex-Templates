@@ -1,0 +1,42 @@
+% !TEX TS-program = luatex
+
+
+\documentclass[localFont,alternative,10pt,compact]{yaac-another-awesome-cv}
+\usepackage[UTF8, scheme = plain]{ctex}
+\name{崔博}{Tom Tsui}
+\tagline{吉林大学|软件学院|软件工程专业}
+\photo{2.5cm}{profile}
+\socialinfo{
+%	\linkedin{christopheroger}
+	\github{PoTsui99}\\
+	\smartphone{+8617361825184}
+	\email{tsuipo@outlook.com}\\
+	\address{吉林省长春市朝阳区前进大街2699号}\\
+	\infos{中共预备党员|江苏南通籍|汉族|1999年8月生|男性}
+}
+
+% Uncomment the following line and use a value from 1.5cm to 2.5cm
+%\setleftcolumnlength{2.5cm}
+
+
+
+\begin{document}
+
+	\makecvheader
+
+	\makecvfooter
+		{\textsc{\today}} % \selectlanguage{english}\today
+		{\textsc{Tsui Po - CV}}
+		{\thepage}
+
+	\input{section_headline_archi}
+	\input{section_scolarite}				% 奖项
+	\input{section_competences}				% 科研项目
+%	\input{section_langues}					% Section langues
+	\input{section_experience_short}		% Section expérience
+%	\input{section_interets}				% Section intérêts
+%	\input{section_projets}
+%	\input{section_references} 				% Section références
+
+
+\end{document}

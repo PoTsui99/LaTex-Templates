@@ -1,0 +1,51 @@
+\documentclass[16pt，letterpaper]{ctexart}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.8in]{geometry}
+
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\Hrule}{\rule{\linewidth}{0.3mm}}
+
+\makeatletter% since there's an at-sign (@) in the command name
+\renewcommand{\@maketitle}{%
+	\parindent=0pt% don't indent paragraphs in the title block
+	\centering
+	{\Large \bfseries\textsc{\@title}}\\
+	\textit{\@author \hfill \@date}
+	\HRule\par%
+	
+	\par
+}
+\makeatother% resets the meaning of the at-sign (@)
+
+\title{个人陈述}
+\author{JLU·SE·崔博}
+\date{\today}
+
+\begin{document}
+	\maketitle% prints the title block
+	\thispagestyle{empty}
+	\vspace{12pt}
+\noindent \textbf{尊敬的教授：}	
+	
+	您好！
+	
+	本人现就读于吉林大学软件学院,软件工程专业.至今犹记本科入学时"don't know what to expect"的惶惑之感,转眼就要思考人生的下一站,让我不由百感交集.我本科就读的吉林大学是"双一流","211工程","985工程"重点建设高校.吉大以其校区之多,素有"美丽的长春坐落于吉林大学的怀抱中"之美誉.所谓大学者,有大师之谓.在吉大的历史上有王湘浩,唐敖庆,匡亚明等大师,让我在倦怠之时受到大师们风骨的感召,精神为之一振.
+	
+	过去两年多的时光里,我完成了本大部分必修课程的学习,并在对应考核中取得了优异的成绩.我前五学期的均绩(含选修)为3.53,年级排名为23/355(居前6.5\%),有极大概率获得免试攻读硕士学位资格.在大一学年我获得了学校的二等奖学金,同时荣获吉林大学院优秀学生的荣誉;在大二学年,我获得了国家励志奖学金.课业之外我也积极参与许多竞赛,例如:全国大学生数学竞赛与数学建模国赛/美赛.并在其中取得了一些成绩.在科研方面我也做了一些尝试,用机器学习和深度学习的方法完成了鸟鸣识别等项目.下面,我想从以下几个方面来介绍我自己:
+	\subsection{学习背景}
+	
+	
+	\subsection{Why Pursuing PhD Degree?}
+	There are two options for my life-path: pursuing a PhD degree or finding a job about DL. The answer became clear to me after working in Microsoft as an intern for 9 months and having a detailed conversation on the issues and outlook of Dialog Models with Prof. Aaron Courvile at IJCAI 2017 conference. Doing the daily routine works and applying existing algorithms to current system is easy, yet I want to take the road less travelled, exploring the detailed structures of DL/NLP. Instead of observing the great development of DL models, it would better to get in the game. Besides, people nowadays solely cascade these historical proposed modules to achieve better performance in existing tasks. Yet permutating over different modules is not enough, performance need to be improved and observed results acquire better theoretical explanations.
+	
+	Devoting all my energy to the development of NLP is challenging yet fascinating, as I believe that the pattern of human language can be revealed by experts and mimicking human conversations will be achieved with specified models. From the first day I got acquainted with DL theories, MILA Lab at Montreal has helped me acquire knowledge though diverse channels, like coding samples, detailed videos and published papers. Learning and working at this advanced scientific lab has been my dream, so I exploit every possibility on improving my knowledge on the fields of ML/DL, to meet up the qualification of PhD candidates in the lab.
+	
+	\subsection{Planning For Doctoral Study}
+	
+	\textbf{Learning with Large-Scale Text Data.}  In the past few years, the size of text data has grown drastically and it becomes necessary for conventional algorithms to converge faster and calculate with better efficiency. Programming with Python is currently the most useful one yet the fastest, building up interfaces with CUDA-based algorithms is efficient yet optimal. As I am learning CUDA-C programming language, there will be framework that build exactly on the fundamental language. Therefore, the capacity of deep models can be greatly exploited and the required time for training will be largely diminished. Building such kind of framework require strong coding skills and efforts, devoting to this possible area is time-consuming yet worthwhile, as it would benefit the future researchers and provide them chances to fully experiment their models within the limited time.
+	
+	\textbf{Possibility of Generative Model on Text.} Despite the traditional supervised and unsupervised tasks, we are at the stage of exploring the effectiveness of generative model. Current advances are based on designing deep modules that fit personal observation, such kind of achievement will not last for long without a more concrete and fundamental theories that cover all the partial explanations into a united one. It is challenging and require complex mathematical theories, and I will devote my time on learning required math courses to present current model with both experimental results and theoretical explanations. As I believe that theories need to be built for generations before we investigate effective pattern for human's conversation.
+	
+	\textbf{Deeper Insight for Text Models.} As I did internship in companies, I have witnessed that the quality for simple task is greatly needed. To illustrate, the real-world datasets for sentiment analysis is much more complex than the standard dataset in research, and it is hard to learn presumable results with current deep models. Therefore, I will devote my effort on improve these well-defined and important tasks, migrating the gap between the academic models and industrial needs.
+\end{document}
