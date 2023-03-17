@@ -53,7 +53,7 @@
     \profpic{0.22}{images/profilpicture}
 \end{minipage}% 
 \hfill
-\begin{minipage}{0.45\linewidth}
+\begin{minipage}{0.6\linewidth}
     \center \name \\[0.05cm] 
     \contact % address \ mobile \\ mail
 \end{minipage}
@@ -82,11 +82,20 @@
     {\large \@firstname \ \textsc{\@lastname}}
 }
 
+%\newcommand{\contact}{%
+%        {\small \@address  \cps \@mobile \\ \@mail%
+%        \\%
+%        \linkedinview  \\ 
+%        } % 
+%}
+
 \newcommand{\contact}{%
-        {\small \@address  \cps \@mobile \\ \@mail%
-        \\%
-        \linkedinview  \\ 
-        } % 
+	{\small \@address  \\
+		\@mobile \\ 
+		\@mail%
+		\\%
+%		\linkedinview  \\ 
+	} % 
 }
 
 % Covverletterview
@@ -149,14 +158,25 @@ Position: & \@claimedposition \\
   \mbox { \hspace{1em} \scshape \textbf{#1} } 
 }
 
+%\newcommand{\datedexperience}[3]{%
+%    \begin{small} \explanation{#2} \hfill \company{#1} \hfill \datetext{#3}
+%    \end{small} \\[0.12cm]%
+%}
+
 \newcommand{\datedexperience}[3]{%
     \begin{small} \explanation{#2} \hfill \company{#1} \hfill \datetext{#3}
-    \end{small} \\[0.12cm]%
+    \end{small} \\[0.25cm]%
 }
+
+
+%\newcommand{\mydatedexperience}[2]{%
+%    \begin{small} \explanation{#1} \hfill \datetext{#2}
+%    \end{small} \\[0.12cm]%
+%}
 
 \newcommand{\mydatedexperience}[2]{%
     \begin{small} \explanation{#1} \hfill \datetext{#2}
-    \end{small} \\[0.12cm]%
+    \end{small} \\[0.25cm]%
 }
 
 \newcommand{\mydatedexperiencetwo}[2]{%
@@ -212,5 +232,5 @@ Position: & \@claimedposition \\
 
 \newcommand\createfootnote{%
   \renewcommand{\footnotesize}{\fontsize{7pt}{11pt}\selectfont}
-    \renewcommand\footnoterule{\rule{0.3\linewidth}{0.5pt}}
-    \let\thefootnote\relax\footnote{\quad \quad \today\ }}
+    \renewcommand\footnoterule{\hspace*{39em}\rule{0.15\linewidth}{0.5pt}}
+    \let\thefootnote\relax\footnote{\hspace*{60em}\quad \quad \today\ }}
