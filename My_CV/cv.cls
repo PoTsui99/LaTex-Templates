@@ -165,7 +165,8 @@ Position: & \@claimedposition \\
 
 \newcommand{\datedexperience}[3]{%
     \begin{small} \explanation{#2} \hfill \company{#1} \hfill \datetext{#3}
-    \end{small} \\[0.25cm]%
+    %\end{small} \\[0.25cm]%
+	\end{small} \\[0.15cm]%
 }
 
 
@@ -176,7 +177,8 @@ Position: & \@claimedposition \\
 
 \newcommand{\mydatedexperience}[2]{%
     \begin{small} \explanation{#1} \hfill \datetext{#2}
-    \end{small} \\[0.25cm]%
+    %\end{small} \\[0.25cm]%
+	\end{small} \\[0.1cm]%
 }
 
 \newcommand{\mydatedexperiencetwo}[2]{%
@@ -185,7 +187,8 @@ Position: & \@claimedposition \\
 }
 
 \newcommand{\explanationdetail}[1]{%
-    \indent \begin{minipage}{0.96\linewidth} \footnotesize #1 \end{minipage} \\[0.25cm]
+    %\indent \begin{minipage}{0.96\linewidth} \footnotesize #1 \end{minipage} \\[0.25cm]
+	\indent \begin{minipage}{0.96\linewidth} \footnotesize #1 \end{minipage} \\[0.1cm]
 }
 
 \newcommand{\itemwithtext}[1]{%
